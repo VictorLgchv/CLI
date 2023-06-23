@@ -4,7 +4,6 @@ const { nanoid } = require("nanoid");
 
 const contactsPath = path.join(__dirname, "db", "contacts.json");
 
-// TODO: задокументувати кожну функцію
 async function listContacts() {
   const data = await fs.readFile(contactsPath, "utf-8");
 
@@ -31,7 +30,6 @@ async function removeContact(contactId) {
 
   await fs.writeFile(contactsPath, JSON.stringify(contacts, null, 2))
   return deleteContact;
-  // ...твій код. Повертає об'єкт видаленого контакту. Повертає null, якщо контакт з таким id не знайдений.
 }
 
 async function addContact(name, email, phone) {
